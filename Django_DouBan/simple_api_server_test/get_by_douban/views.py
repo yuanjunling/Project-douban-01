@@ -47,3 +47,28 @@ class Movie(View):
 
         data = response.json()
         return JsonResponse({'errcode':0,'errmsg':'成功','data':data})
+
+class Book(View):
+    DOUBAN_BOOK_API = 'https://api.douban.com/v2/book/search?q={0}'
+    def get(self,request):
+        book_name = request.GET.get('bookname','')
+        if not book_name:
+            return JsonResponse({
+                'errcode': -1,
+                'errmsg': '图书名不能为空'
+            })
+        url = self.DOUBAN_BOOK_API.format(book_name)
+        try:
+            response = requests.get(url)
+        except Exception as e:
+            return JsonResponse({
+                'errcode': -1,
+                'errmsg': str(e)
+            })
+        if response.status_code == 301 | 200:
+            return JsonResponse({
+                'errcode':-1,
+                'errmsg':'请求豆瓣异常'
+            })
+        data = response.json()
+        return JsonResponse({'errcode': 0, 'errmsg': '成功', 'data': data})
