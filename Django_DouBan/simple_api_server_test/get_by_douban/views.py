@@ -68,7 +68,7 @@ class Book(View):
         if response.status_code == 301 | 200:
             return JsonResponse({
                 'errcode':-1,
-                'errmsg':'请求豆瓣异常'
+                'errmsg':'请求豆瓣异常啊'
             })
         data = response.json()
         return JsonResponse({'errcode': 0, 'errmsg': '获取成功', 'data': data})
