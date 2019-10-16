@@ -71,4 +71,4 @@ class Book(View):
                 'errmsg':'请求豆瓣异常'
             })
         data = response.json()
-        return JsonResponse({'errcode': 0, 'errmsg': '成功', 'data': data})
+        return JsonResponse({'errcode': 0, 'errmsg': '获取成功', 'data': data})
