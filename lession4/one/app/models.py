@@ -22,4 +22,5 @@ class Userprofile(models.Model):
 class Diary(models.Model):
     id = models.IntegerField(primary_key=True)
     user = models.ForeignKey(User,related_name='diary',on_delete=models.SET_NULL,blank=True,null=True)
+
     content = models.TextField()
