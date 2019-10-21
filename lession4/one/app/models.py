@@ -19,8 +19,15 @@ class Userprofile(models.Model):
     id = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User,blank=True,null=True,on_delete=models.SET_NULL)
     birthday = models.CharField(max_length=100,blank=True,default='')
+
 class Diary(models.Model):
     id = models.IntegerField(primary_key=True)
     user = models.ForeignKey(User,related_name='diary',on_delete=models.SET_NULL,blank=True,null=True)
+    content = models.TextField(max_length=800)
+    create_time = models.IntegerField()
 
-    content = models.TextField()
+class Group(models.Model):
+    id = models.IntegerField(primary_key=True)
+    user = models.ManyToManyField(User,related_name='group')
+    name = models.CharField(max_length=20)
+    create_time = models.IntegerField()
