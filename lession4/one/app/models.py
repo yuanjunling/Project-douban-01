@@ -15,6 +15,10 @@ class User(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
     updata_time = models.DateTimeField(auto_now=True)
 
+    class Meta:#索引
+        index_together = ['username','phone']
+
+
 class Userprofile(models.Model):
     id = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User,blank=True,null=True,on_delete=models.SET_NULL)
