@@ -1,11 +1,11 @@
 
 from PyMysql import DoMysql
-mysql  = DoMysql()
+mysql = DoMysql()#实例化对象
 sql = 'SELECT username FROM app_user WHERE id = 1;'
 result = mysql.fetchAll(sql)
 print(result)
 
-sql = 'insert into `app_user`(`username`,`age`,`phone`,`email`,`info`) values("testname2","21","1361361613","243154@qq.com","这个家伙很懒!!")'
+sql = 'insert into `app_user`(`username`,`age`,`phone`,`email`,`info`) values("testname6","21","1361361623","243111511@qq.com","这个家伙很懒!!!")'
 insert = mysql.insert_one(sql)
 print(insert)
 # 关闭连接

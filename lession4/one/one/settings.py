@@ -79,7 +79,7 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
-        'NAME': 'lession6',         # 你要存储数据的库名，事先要创建之
+        'NAME': 'lession7',         # 你要存储数据的库名，事先要创建之
         'USER': 'root',         # 数据库用户名
         'PASSWORD': 'YzMysql123*',     # 密码
         'HOST': '121.40.247.199',    # 主机

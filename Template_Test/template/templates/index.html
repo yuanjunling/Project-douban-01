@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load myfilter %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'index.css' %}"/>
+{% endblock %}
+{% block title %}
+劳资是标题
+{% endblock %}
+{% block content %}
+<h1>你好啊 {{name}}</h1>
+<ul>
+    {% for item in array %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+<br />
+<label>add:</label>{{count|add:10}}<br />
+<label>date:</label>{{time|date:"Y-m-d H:i:s"}}<br />
+<label>aaa:</label>{{count|test:10}}
+{% endblock %}
+{% block js_script %}
+{% endblock %}

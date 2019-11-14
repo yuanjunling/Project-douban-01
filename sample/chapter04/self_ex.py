@@ -26,5 +26,5 @@ def head_itme(item):
     return item*item
 odd_list1 = (head_itme(i) for i in range(21) if i % 2==1) #生成器表达式
 print("odd_list1 = ",odd_list1)
-for item1 in odd_list1:
-    print(item1)
+for item in odd_list1:
+    print(item)
